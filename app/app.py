@@ -31,7 +31,6 @@ from  process_data import *
 import plotly.express as px
 import dash_bootstrap_components as dbc
 
-#os.chdir("../")
 print(os.getcwd())
 
 get_johns_hopkins()
@@ -45,8 +44,6 @@ print('the test slope is: '+str(result))
 pd_JH_data=pd.read_csv('../data/processed/COVID_relational_confirmed.csv',sep=';',parse_dates=[0])
 pd_JH_data=pd_JH_data.sort_values('date',ascending=True).copy()
 
-#test_structure=pd_JH_data[((pd_JH_data['country']=='US')|
-#                  (pd_JH_data['country']=='Germany'))]
 
 pd_result_larg=calc_filtered_data(pd_JH_data)
 pd_result_larg=calc_doubling_rate(pd_result_larg)
@@ -100,7 +97,7 @@ def SIR_model_t(SIR,t,beta,gamma):
     '''
     
     S,I,R=SIR
-    dS_dt=-beta*S*I/N0          #S*I is the 
+    dS_dt=-beta*S*I/N0          
     dI_dt=beta*S*I/N0-gamma*I
     dR_dt=gamma*I
     return dS_dt,dI_dt,dR_dt
@@ -127,9 +124,7 @@ fitted=fit_odeint(t, *popt)
 
 
 
-#visualize
-
-
+#Visualize
 df_input_large=pd.read_csv('../data/processed/COVID_final_set.csv',sep=';')
 fig = go.Figure()
 
@@ -231,7 +226,7 @@ def update_figure(country_list,show_doubling):
             df_plot=df_plot[['state','country','confirmed','confirmed_filtered','confirmed_DR','confirmed_filtered_DR','date']].groupby(['country','date']).agg(np.mean).reset_index()
         else:
             df_plot=df_plot[['state','country','confirmed','confirmed_filtered','confirmed_DR','confirmed_filtered_DR','date']].groupby(['country','date']).agg(np.sum).reset_index()
-       #print(show_doubling)
+       
 
 
         traces.append(dict(x=df_plot.date,
@@ -263,7 +258,7 @@ def update_figure(country_list,show_doubling):
     Output('sir', 'figure'),
     Input('country_SIR', 'value'))
 def update_graph_SIR(country_SIR):
-    print(country_SIR+'......')
+    
 
     global I0,S0,N0,I0,R0,ydata,t,popt
 
@@ -291,11 +286,6 @@ def update_graph_SIR(country_SIR):
 
     fitted=fit_odeint(t, *popt)
 
-
-
-
-
-    
     fig2=go.Figure()
     title="Fit of SIR model for "+country_SIR+"  cases"
     fig2.add_trace(go.Scatter(x=t, y=ydata, name='Y data', mode='lines'))
@@ -307,8 +297,5 @@ def update_graph_SIR(country_SIR):
         yaxis_title="Population Infected"
     )
     return fig2
-
-
-
 
 app.run_server(debug=False, use_reloader=True)
