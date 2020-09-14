@@ -133,7 +133,7 @@ server=app.server
 app.layout = html.Div([
 
     dcc.Markdown('''
-    # **ENTERPRISE DATA SCIENCE - COVID19 DATA**
+    # **ENTERPRISE DATA SCIENCE - COVID-19 DATA**
     '''),
     dcc.Markdown(''' ---
 Author: Tanmay Delhikar
