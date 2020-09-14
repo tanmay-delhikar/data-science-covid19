@@ -70,12 +70,12 @@ gamma=0.1  # recovery rate
 
 
 # condition I0+S0+R0=N0
-I0=df_analyse['Germany'][35]
+I0=df_analyse['Germany'][50]
 S0=N0-I0
 R0=0
 
 
-ydata = np.array(df_analyse['Germany'][35:])
+ydata = np.array(df_analyse['Germany'][50:])
 t=np.arange(len(ydata))
 
 I0=ydata[0]
@@ -262,11 +262,11 @@ def update_graph_SIR(country_SIR):
 
     global I0,S0,N0,I0,R0,ydata,t,popt
 
-    I0=df_analyse[country_SIR][35]
+    I0=df_analyse[country_SIR][50]
     S0=N0-I0
     R0=0
 
-    ydata = np.array(df_analyse[country_SIR][35:])
+    ydata = np.array(df_analyse[country_SIR][50:])
     t=np.arange(len(ydata))
 
     I0=ydata[0]
