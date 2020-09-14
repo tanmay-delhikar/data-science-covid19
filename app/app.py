@@ -307,4 +307,4 @@ def update_graph_SIR(country_SIR):
 
 
 
-app.run_server(debug=True, use_reloader=True)
+app.run_server(debug=True, use_reloader=False)

@@ -12,7 +12,7 @@ def get_johns_hopkins():
         Result is stored in the predifined csv structure
     '''
     git_pull = subprocess.Popen( "git pull" ,
-                         cwd = os.path.dirname( 'data/raw/COVID-19/' ),
+                         cwd = os.path.dirname( '../data/raw/COVID-19/' ),
                          shell = True,
                          stdout = subprocess.PIPE,
                          stderr = subprocess.PIPE )
