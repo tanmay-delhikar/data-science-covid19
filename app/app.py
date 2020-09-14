@@ -140,11 +140,14 @@ app.layout = html.Div([
     dcc.Markdown('''
     # **ENTERPRISE DATA SCIENCE - COVID19 DATA**
     '''),
+    dcc.Markdown(''' ---
+Author: Tanmay Delhikar
+--- '''),
     dcc.Markdown('''
     ---
     '''),
     dcc.Markdown('''
-    ## Part 1 : All Countries Visualization
+    ## **Part 1 : All Countries Visualization**
     '''),
     dcc.Markdown('''
     ### Select one or more countries
@@ -179,7 +182,7 @@ app.layout = html.Div([
     ---
     '''),
     dcc.Markdown('''
-    ## Part 2 : SIR Modelling
+    ## **Part 2 : SIR Modelling**
     '''),
     dcc.Markdown('''
     ### Select any country
@@ -299,6 +302,7 @@ def update_graph_SIR(country_SIR):
     fig2.add_trace(go.Scatter(x=t, y=fitted, name='Fitted data', mode='lines'))
     fig2.update_yaxes(type="log")
     fig2.update_layout(
+        title=title,
         xaxis_title="Days",
         yaxis_title="Population Infected"
     )
@@ -307,4 +311,4 @@ def update_graph_SIR(country_SIR):
 
 
 
-app.run_server(debug=True, use_reloader=False)
+app.run_server(debug=False, use_reloader=True)
