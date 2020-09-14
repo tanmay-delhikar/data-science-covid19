@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-
+import flask
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -133,8 +133,8 @@ fitted=fit_odeint(t, *popt)
 df_input_large=pd.read_csv('../data/processed/COVID_final_set.csv',sep=';')
 fig = go.Figure()
 
-
-app = dash.Dash(__name__,external_stylesheets=[dbc.themes.COSMO])
+server = flask.Flask(__name__)
+app = dash.Dash(external_stylesheets=[dbc.themes.COSMO],server=server)
 app.layout = html.Div([
 
     dcc.Markdown('''
