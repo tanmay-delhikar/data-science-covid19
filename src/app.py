@@ -34,8 +34,8 @@ import dash_bootstrap_components as dbc
 #os.chdir("../")
 print(os.getcwd())
 
-#get_johns_hopkins()
-#store_relational_JH_data()
+get_johns_hopkins()
+store_relational_JH_data()
 
 
 test_data_reg=np.array([2,4,6])
@@ -62,7 +62,7 @@ print(pd_result_larg[pd_result_larg['country']=='Germany'].tail())
 
 ###SIR
 
-#proces_SIR_data()
+proces_SIR_data()
 
 df_analyse=pd.read_csv('../data/processed/COVID_small_flat_table.csv',sep=';')  
 df_analyse.sort_values('date',ascending=True).head()
