@@ -133,8 +133,8 @@ fitted=fit_odeint(t, *popt)
 df_input_large=pd.read_csv('../data/processed/COVID_final_set.csv',sep=';')
 fig = go.Figure()
 
-server = flask.Flask(__name__)
-app = dash.Dash(external_stylesheets=[dbc.themes.COSMO],server=server)
+app = dash.Dash(external_stylesheets=[dbc.themes.COSMO])
+server=app.server
 app.layout = html.Div([
 
     dcc.Markdown('''
