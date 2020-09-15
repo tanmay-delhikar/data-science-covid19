@@ -298,4 +298,4 @@ def update_graph_SIR(country_SIR):
     )
     return fig2
 
-app.run_server(debug=False, use_reloader=True)
+app.run_server(debug=True, use_reloader=False)
