@@ -19,3 +19,6 @@ $cd app
 ```sh
 $python app.py
 ```
+
+#### Dash Application Image ####
+![Image](Application.jpg)
