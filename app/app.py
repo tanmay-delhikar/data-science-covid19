@@ -287,8 +287,8 @@ def update_graph_SIR(country_SIR):
     fitted=fit_odeint(t, *popt)
 
     fig2=go.Figure()
-    title="Fit of SIR model for "+country_SIR+"  cases"
-    fig2.add_trace(go.Scatter(x=t, y=ydata, name='Y data', mode='lines'))
+    title="Fit of SIR model for "+country_SIR+"  cases"+", Optimal parameters: beta ="+str(popt[0])+" and gamma = "+str(popt[1])
+    fig2.add_trace(go.Scatter(x=t, y=ydata, name='True data', mode='lines'))
     fig2.add_trace(go.Scatter(x=t, y=fitted, name='Fitted data', mode='lines'))
     fig2.update_yaxes(type="log")
     fig2.update_layout(
