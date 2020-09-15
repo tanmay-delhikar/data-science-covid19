@@ -21,4 +21,4 @@ $python app.py
 ```
 
 #### Dash Application Image ####
-![Image](Application.jpg)
+![Image](Application.png)
