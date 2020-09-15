@@ -20,5 +20,9 @@ $cd app
 $python app.py
 ```
 
-#### Dash Application Image ####
+
+
+-------------------------------------------------------------------------------
+
+
 ![Image](Application.png)
