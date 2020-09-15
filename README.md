@@ -1,6 +1,6 @@
 # ENTERPRISE DATA SCIENCE 2020
 
-## Python Dash Application to visualize Covid-19 data.
+## Python Dash application to visualize Covid-19 data.
 
 
 #### STEP 1 : Install all python dependencies
